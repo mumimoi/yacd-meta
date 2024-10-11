@@ -28,10 +28,8 @@ jobs:
           pnpm build
       - name: Compress files
         run: |
-          ls public
           mv public dashboard
-          ls dashboard
-          zip dashboard.zip dashboard/*
+          zip -r dashboard.zip dashboard
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
